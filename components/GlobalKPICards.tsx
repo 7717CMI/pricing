@@ -100,25 +100,36 @@ export function GlobalKPICards() {
       return null
     }
 
-    // Calculate total market size for 2024 and 2032
-    let marketSize2024 = 0
-    let marketSize2032 = 0
+    // Get start year for month calculation
+    const startYear = data.metadata.start_year
+
+    // Use the year range from filters (capped at Month 12)
+    const maxAllowedYear = Math.min(data.metadata.forecast_year, startYear + 11)
+    const firstYear = filters.yearRange[0]
+    const lastYear = Math.min(filters.yearRange[1], maxAllowedYear)
+
+    // Helper function to convert year to month label
+    const yearToMonth = (year: number) => `Month ${year - startYear + 1}`
+
+    // Calculate total market size for first and last months in range
+    let marketSizeFirst = 0
+    let marketSizeLast = 0
 
     globalRecords.forEach(record => {
-      marketSize2024 += record.time_series[2024] || 0
-      marketSize2032 += record.time_series[2032] || 0
+      marketSizeFirst += record.time_series[firstYear] || 0
+      marketSizeLast += record.time_series[lastYear] || 0
     })
 
-    // Calculate CAGR from 2024 to 2032
-    const years = 2032 - 2024
-    const cagr = marketSize2024 > 0 
-      ? (Math.pow(marketSize2032 / marketSize2024, 1 / years) - 1) * 100
+    // Calculate CAGR from first to last month
+    const months = lastYear - firstYear
+    const cagr = marketSizeFirst > 0 && months > 0
+      ? (Math.pow(marketSizeLast / marketSizeFirst, 1 / months) - 1) * 100
       : 0
 
     // Calculate absolute growth
-    const absoluteGrowth = marketSize2032 - marketSize2024
-    const growthPercentage = marketSize2024 > 0 
-      ? ((marketSize2032 - marketSize2024) / marketSize2024) * 100
+    const absoluteGrowth = marketSizeLast - marketSizeFirst
+    const growthPercentage = marketSizeFirst > 0
+      ? ((marketSizeLast - marketSizeFirst) / marketSizeFirst) * 100
       : 0
 
     // Get currency preference
@@ -133,9 +144,13 @@ export function GlobalKPICards() {
       : (data.metadata.volume_unit || 'Units')
 
     // Display values as-is (they're already in the correct unit)
-    const marketSize2024Display = marketSize2024
-    const marketSize2032Display = marketSize2032
+    const marketSizeFirstDisplay = marketSizeFirst
+    const marketSizeLastDisplay = marketSizeLast
     const absoluteGrowthDisplay = absoluteGrowth
+
+    // Month labels for display
+    const firstMonthLabel = yearToMonth(firstYear)
+    const lastMonthLabel = yearToMonth(lastYear)
 
     // Build descriptive labels
     // Note: selectedGeographies might be empty if we fell back to showing all geographies
@@ -153,8 +168,8 @@ export function GlobalKPICards() {
     const segmentTypeLabel = targetSegmentType || 'All Segments'
 
     return {
-      marketSize2024: marketSize2024Display,
-      marketSize2032: marketSize2032Display,
+      marketSizeFirst: marketSizeFirstDisplay,
+      marketSizeLast: marketSizeLastDisplay,
       cagr,
       absoluteGrowth: absoluteGrowthDisplay,
       growthPercentage,
@@ -164,7 +179,9 @@ export function GlobalKPICards() {
       geographyLabel,
       segmentTypeLabel,
       dataType: filters.dataType,
-      isINR
+      isINR,
+      firstMonthLabel,
+      lastMonthLabel
     }
   }, [data, filters, currency])
 
@@ -189,7 +206,7 @@ export function GlobalKPICards() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {/* Market Size 2024 */}
+          {/* Market Size - First Month */}
           <div className="flex items-center gap-2">
             <div className="p-1.5 bg-blue-100 rounded">
               {kpiData.currency === 'INR' ? (
@@ -200,33 +217,33 @@ export function GlobalKPICards() {
             </div>
             <div>
               <p className="text-[10px] text-black uppercase tracking-wider font-semibold">
-                {kpiData.dataTypeLabel} 2024
+                {kpiData.dataTypeLabel} {kpiData.firstMonthLabel}
               </p>
               <p className="text-base font-bold text-black leading-tight">
-                {kpiData.dataType === 'value' && kpiData.isINR 
-                  ? `₹ ${formatIndianNumber(kpiData.marketSize2024)}`
+                {kpiData.dataType === 'value' && kpiData.isINR
+                  ? `₹ ${formatIndianNumber(kpiData.marketSizeFirst)}`
                   : kpiData.dataType === 'value'
-                  ? `$ ${kpiData.marketSize2024.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`
-                  : `${kpiData.marketSize2024.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`}
+                  ? `$ ${kpiData.marketSizeFirst.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`
+                  : `${kpiData.marketSizeFirst.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`}
               </p>
             </div>
           </div>
 
-          {/* Market Size 2032 */}
+          {/* Market Size - Last Month */}
           <div className="flex items-center gap-2">
             <div className="p-1.5 bg-green-100 rounded">
               <Calendar className="h-4 w-4 text-green-600" />
             </div>
             <div>
               <p className="text-[10px] text-black uppercase tracking-wider font-semibold">
-                {kpiData.dataTypeLabel} 2032
+                {kpiData.dataTypeLabel} {kpiData.lastMonthLabel}
               </p>
               <p className="text-base font-bold text-black leading-tight">
-                {kpiData.dataType === 'value' && kpiData.isINR 
-                  ? `₹ ${formatIndianNumber(kpiData.marketSize2032)}`
+                {kpiData.dataType === 'value' && kpiData.isINR
+                  ? `₹ ${formatIndianNumber(kpiData.marketSizeLast)}`
                   : kpiData.dataType === 'value'
-                  ? `$ ${kpiData.marketSize2032.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`
-                  : `${kpiData.marketSize2032.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`}
+                  ? `$ ${kpiData.marketSizeLast.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`
+                  : `${kpiData.marketSizeLast.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`}
               </p>
             </div>
           </div>
@@ -238,7 +255,7 @@ export function GlobalKPICards() {
             </div>
             <div>
               <p className="text-[10px] text-black uppercase tracking-wider font-semibold">
-                CAGR (2024-2032)
+                CAGR ({kpiData.firstMonthLabel}-{kpiData.lastMonthLabel})
               </p>
               <p className="text-base font-bold text-black leading-tight">
                 {kpiData.cagr.toFixed(2)}%
@@ -253,10 +270,10 @@ export function GlobalKPICards() {
             </div>
             <div>
               <p className="text-[10px] text-black uppercase tracking-wider font-semibold">
-                Absolute Growth (2024-2032)
+                Absolute Growth ({kpiData.firstMonthLabel}-{kpiData.lastMonthLabel})
               </p>
               <p className="text-base font-bold text-black leading-tight">
-                {kpiData.dataType === 'value' && kpiData.isINR 
+                {kpiData.dataType === 'value' && kpiData.isINR
                   ? `₹ ${formatIndianNumber(kpiData.absoluteGrowth)}`
                   : kpiData.dataType === 'value'
                   ? `$ ${kpiData.absoluteGrowth.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} ${kpiData.unit}`
