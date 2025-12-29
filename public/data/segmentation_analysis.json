@@ -1,0 +1,218 @@
+{
+  "Global": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "North America": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "Europe": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "Asia Pacific": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "India": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "Latin America": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "Middle East": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  },
+  "Africa": {
+    "By Product Type": {
+      "Palm Oil-Based Products": {
+        "Crude Palm Oil (CPO)": {},
+        "Palm Fatty Acid Distillate (PFAD)": {},
+        "Refined, Bleached & Deodorized Palm Stearin (RBDPS)": {}
+      },
+      "Palm Kernel Oil-Based Products": {
+        "Crude Palm Kernel Oil (CPKO)": {},
+        "Palm Kernel Fatty Acid Distillate (PKFAD)": {}
+      },
+      "Soft Vegetable Oils": {
+        "Mustard Oil": {},
+        "Rapeseed Oil": {}
+      },
+      "Coconut Oil-Based Products": {
+        "Coconut Oil": {},
+        "Coconut Fatty Acid Distillate (CNFAD)": {}
+      },
+      "Oleochemical Intermediates - Distilled Fatty Acids (DFAs)": {
+        "Short-Chain DFAs (C6-C10)": {},
+        "Lauric DFAs (C12-C14)": {},
+        "Mid-Chain DFAs (C16-C18)": {},
+        "Long-Chain DFAs (C20-C22)": {}
+      }
+    }
+  }
+}
