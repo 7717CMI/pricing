@@ -19,7 +19,6 @@ import { InsightsPanel } from '@/components/InsightsPanel'
 import { FilterPresets } from '@/components/filters/FilterPresets'
 import { ChartGroupSelector } from '@/components/filters/ChartGroupSelector'
 import { CustomScrollbar } from '@/components/ui/CustomScrollbar'
-import { GlobalKPICards } from '@/components/GlobalKPICards'
 import { getChartsForGroup } from '@/lib/chart-groups'
 import { Lightbulb, X, Layers, LayoutGrid, Settings } from 'lucide-react'
 import { useRouter } from 'next/navigation'
@@ -204,17 +203,28 @@ export default function DashboardPage() {
                 Coherent Dashboard
               </h1>
               <h2 className="text-sm text-black">
-                {dashboardName || 'Vegetable Oils and Oleochemicals Feedstocks Market Analysis'}
+                {dashboardName || 'Pricing Analysis - Vegetable Oils and Oleochemicals Feedstocks Market'}
               </h2>
             </div>
           </div>
           
         </div>
 
-        {/* Global KPI Cards */}
-        <div className="mb-6">
-          <GlobalKPICards />
+        {/* Analysis Header */}
+        <div className="mb-6 bg-gradient-to-r from-gray-50 to-gray-100 border-y border-gray-200 py-3">
+          <div className="container mx-auto px-6">
+            <p className="text-sm text-black">
+              <span className="font-semibold">Pricing Analysis</span> for Global Vegetable Oils and Oleochemicals Feedstocks Market Analysis | {filters.segmentType || 'By Product Type'}
+            </p>
+            <div className="mt-2 px-3 py-2 bg-amber-50 border border-amber-200 rounded-md inline-flex items-center gap-2">
+              <span className="text-amber-600 font-bold">⚠</span>
+              <span className="text-xs text-amber-800">
+                <strong>NOTE:</strong> All data used in this dashboard is demo data and no real-world data is related to this
+              </span>
+            </div>
+          </div>
         </div>
+
         <div className="grid grid-cols-12 gap-6">
           {/* Sidebar - Enhanced Filter Panel */}
           <aside className={`transition-all duration-300 ${

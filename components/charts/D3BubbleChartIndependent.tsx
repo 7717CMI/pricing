@@ -1410,7 +1410,7 @@ export function D3BubbleChartIndependent({ title, height = 500 }: BubbleChartPro
   const selectedCurrency = currency || data.metadata.currency || 'USD'
   const isINR = selectedCurrency === 'INR'
   const currencySymbol = isINR ? '₹' : '$'
-  const unitText = isINR ? '' : (data.metadata.value_unit || 'Million')
+  const unitText = isINR ? '' : (data.metadata.value_unit || 'Ton')
   
   const unit = filters.dataType === 'value'
     ? isINR 

@@ -138,7 +138,7 @@ export function MultiLineChart({ title, height = 400 }: MultiLineChartProps) {
   const selectedCurrency = currency || data.metadata.currency || 'USD'
   const isINR = selectedCurrency === 'INR'
   const currencySymbol = isINR ? '₹' : '$'
-  const unitLabel = isINR ? '' : (data.metadata.value_unit || 'Million')
+  const unitLabel = isINR ? '' : (data.metadata.value_unit || 'Ton')
 
   // Helper function to convert year to month label
   const startYear = data.metadata.start_year
@@ -197,7 +197,7 @@ export function MultiLineChart({ title, height = 400 }: MultiLineChartProps) {
                 const selectedCurrency = currency || data.metadata.currency || 'USD'
                 const isINR = selectedCurrency === 'INR'
                 const currencySymbol = isINR ? '₹' : '$'
-                const unitText = isINR ? '' : (data.metadata.value_unit || 'Million')
+                const unitText = isINR ? '' : (data.metadata.value_unit || 'Ton')
 
                 const unit = filters.dataType === 'value'
                   ? isINR

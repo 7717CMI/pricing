@@ -1219,7 +1219,7 @@ export async function processJsonDataAsync(
       historical_years: allYears.filter(y => y <= baseYear),
       forecast_years: allYears.filter(y => y > baseYear),
       currency: 'USD',
-      value_unit: 'Million',
+      value_unit: 'Ton',
       volume_unit: 'Million Units',
       has_value: valueRecords.length > 0,
       has_volume: volumeRecords.length > 0,

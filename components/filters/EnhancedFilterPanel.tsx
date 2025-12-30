@@ -253,31 +253,16 @@ export function EnhancedFilterPanel() {
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-2.5 space-y-2">
-      {/* Data Type Selection */}
+      {/* Pricing Analysis Tab */}
       <div>
         <label className="text-xs font-medium text-black uppercase">
-          Data Type
+          Analysis Type
         </label>
         <div className="flex gap-1 mt-1">
           <button
-            onClick={() => updateFilters({ dataType: 'value' })}
-            className={`flex-1 px-3 py-1.5 text-sm rounded ${
-              filters.dataType === 'value'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-black hover:bg-gray-200'
-            }`}
+            className="flex-1 px-3 py-1.5 text-sm rounded bg-blue-600 text-white"
           >
-            Value
-          </button>
-          <button
-            onClick={() => updateFilters({ dataType: 'volume' })}
-            className={`flex-1 px-3 py-1.5 text-sm rounded ${
-              filters.dataType === 'volume'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-black hover:bg-gray-200'
-            }`}
-          >
-            Volume
+            Pricing Analysis
           </button>
         </div>
       </div>
@@ -540,7 +525,7 @@ export function EnhancedFilterPanel() {
             <div>📍 {filters.geographies.length} geographies</div>
             <div>📊 {selectedSegments.length} segments from {new Set(selectedSegments.map(s => s.type)).size} types</div>
             <div>📅 Months: Month {Math.min(filters.yearRange[0] - (data?.metadata?.start_year || filters.yearRange[0]) + 1, 12)} - Month {Math.min(filters.yearRange[1] - (data?.metadata?.start_year || filters.yearRange[0]) + 1, 12)}</div>
-            <div>📈 Data: {filters.dataType}</div>
+            <div>📈 Analysis: Pricing Analysis</div>
             <div>🔢 Level: Auto (based on selected segments)</div>
           </div>
         </div>

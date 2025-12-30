@@ -16,7 +16,7 @@ export interface ChartGroup {
 export const CHART_GROUPS: ChartGroup[] = [
   {
     id: 'market-analysis',
-    label: 'Market Analysis',
+    label: 'Pricing Analysis',
     description: 'Core market metrics and trends',
     charts: ['grouped-bar', 'multi-line', 'heatmap', 'comparison-table', 'waterfall'],
     icon: '📊'

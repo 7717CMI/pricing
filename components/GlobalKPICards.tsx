@@ -137,10 +137,10 @@ export function GlobalKPICards() {
     const isINR = selectedCurrency === 'INR'
     
     // Values in time_series are already in the unit specified by value_unit/volume_unit
-    // For example, if value_unit is "Million", values are already in millions (e.g., 811.6 means $811.6 Million)
+    // For example, if value_unit is "Ton", values are already in tons (e.g., 811.6 means $811.6/Ton)
     // No conversion is needed - just display the values with the appropriate unit label
     const unit = filters.dataType === 'value'
-      ? (data.metadata.value_unit || 'Million')
+      ? (data.metadata.value_unit || 'Ton')
       : (data.metadata.volume_unit || 'Units')
 
     // Display values as-is (they're already in the correct unit)
@@ -174,7 +174,7 @@ export function GlobalKPICards() {
       absoluteGrowth: absoluteGrowthDisplay,
       growthPercentage,
       currency: selectedCurrency,
-      unit: isINR ? '' : (unit || 'Million'),
+      unit: isINR ? '' : (unit || 'Ton'),
       dataTypeLabel,
       geographyLabel,
       segmentTypeLabel,

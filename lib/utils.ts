@@ -21,7 +21,7 @@ export function getCurrencySymbol(currency: 'USD' | 'INR'): string {
 // Format unit based on currency preference
 export function formatUnit(unit: string, currency: 'USD' | 'INR'): string {
   if (currency === 'INR') {
-    return unit.replace('USD Million', '').replace('USD', '').replace('Million', '').trim()
+    return unit.replace('USD Million', '').replace('USD Ton', '').replace('USD', '').replace('Million', '').replace('Ton', '').trim()
   }
   return unit
 }
