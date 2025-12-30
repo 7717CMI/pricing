@@ -624,7 +624,7 @@ export default function CustomerIntelligenceDatabase({ title, height = 600 }: Cu
       </Preposition>
 
       <Preposition
-        title="Raw Material Costs"
+        title="Factors Affecting"
         isOpen={openPreposition === 2}
         onToggle={() => togglePreposition(2)}
       >
